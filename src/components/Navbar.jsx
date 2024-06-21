@@ -15,18 +15,17 @@ function Navbar() {
   };
   console.log(user);
   return (
-    <div className="px-4 py-2 flex items-center justify-between absolute z-10 w-full max-w-7xl">
+    <div className="px-4 py-3 flex items-center justify-between absolute z-10 w-full max-w-7xl">
       <Link to="/">
-        <h1 className="font-Bebas Neue text-netRed font-bold cursor-pointer uppercase text-2xl">
-          netflix
-        </h1>
+        <div className="w-[150px] border-1 border-white cursor-pointer">
+          <img className="w-full " src="/images/logo.png" alt="logo" />
+        </div>
       </Link>
       {user?.email ? (
         <div>
           <Link to="/account">
             <button className="text-white font-bold px-4 py-2">Account</button>
           </Link>
-
           <button
             onClick={handleLogout}
             className="bg-netRed hover:bg-netRed/30 text-white font-bold py-2 px-4 rounded"

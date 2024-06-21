@@ -4,8 +4,8 @@ import Movie from "./Movie";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-const Row = ({ rowId, type, fetchUrl }) => {
-  const [slides, setSlids] = useState([]);
+const Row = ({ rowId, type, slides = [] }) => {
+  console.log("slides ", slides);
   const slideLeft = () => {
     let slider = document.getElementById("slider" + rowId);
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -14,9 +14,9 @@ const Row = ({ rowId, type, fetchUrl }) => {
     let slider = document.getElementById("slider" + rowId);
     slider.scrollLeft = slider.scrollLeft + 500;
   };
-  useEffect(() => {
-    axios.get(fetchUrl).then((response) => setSlids(response.data.results));
-  }, [fetchUrl]);
+  // useEffect(() => {
+  //   axios.get(fetchUrl).then((response) => setSlids(response.data.results));
+  // }, [fetchUrl]);
 
   return (
     // <div className=" py-4 ">

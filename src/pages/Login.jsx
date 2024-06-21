@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await signIn(email, password);
-      navigate("/");
+      navigate("/hero");
     } catch (error) {
       console.log(error);
     }

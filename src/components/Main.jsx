@@ -6,14 +6,15 @@ const Main = () => {
   const movie = movies[Math.floor(Math.random() * movies.length)];
   useEffect(() => {
     axios
-      .get(requests.requestPopular)
-      .then((response) => setMovies(response.data.results));
+      .get("../data.json")
+      .then((response) => setMovies(response.data[0].movies));
   }, []);
 
   const truncateString = (str, num) => {
     if (str?.length > num) return str.slice(0, num) + "...";
     return str;
   };
+
   return (
     <div className="max-w-7xl h-[550px] text-white">
       <div className="h-[550px]  max-w-7xl  absolute bg-gradient-to-r from-black to-transparent  ">
